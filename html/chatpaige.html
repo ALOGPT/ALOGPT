@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AloGPT | چت</title>
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/media.css">
+    <link rel="stylesheet" href="/styles/fontawesome-free-7.3.0-web/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body class="chat-page">
+    <button id="mobileSidebarToggle" class="mobile-sidebar-toggle" aria-label="باز کردن منو" aria-expanded="false">
+        <i class="bi bi-layout-sidebar"></i>
+    </button>
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <div class="chat-shell">
+        <aside class="left-screen" id="sidebarPanel" aria-label="منوی اصلی">
+            <div class="sidebar-top">
+                <button class="sidebar-icon" type="button" aria-label="بستن منو"><i class="bi bi-layout-sidebar"></i></button>
+                <span class="sidebar-brand"><span class="brand-mark">✦</span> AloGPT</span>
+                <button class="sidebar-icon" type="button" aria-label="جادو"><i class="bi bi-magic"></i></button>
+            </div>
+            <nav class="ls-menu">
+                <a href="#" class="ls-item"><i class="bi bi-pencil-square"></i> چت جدید</a>
+                <a href="#" class="ls-item"><i class="bi bi-search"></i> جستجو</a>
+                <a href="#" class="ls-item"><i class="bi bi-collection"></i> کتابخانه</a>
+                <a href="#" class="ls-item"><i class="bi bi-folder2"></i> پروژه‌ها</a>
+                <a href="#" class="ls-item"><i class="bi bi-puzzle"></i> افزونه‌ها</a>
+            </nav>
+            <section class="ls-recents-wrap">
+                <div class="ls-section-label">اخیر</div>
+                <div class="ls-recents-list" id="recentChats" role="list">
+                    <div class="ls-recent-group" data-recent-group="today">
+                        <div class="ls-recent-group-label">امروز</div>
+                        <div class="ls-recent-items">
+                            <div class="ls-recent-row active" role="listitem" data-chat-title="طراحی صفحه چت">
+                                <button class="ls-recent-item" type="button"><span class="ls-recent-title">طراحی صفحه چت</span><time>13:42</time></button>
+                                <button class="ls-recent-menu-toggle" type="button" aria-label="گزینه‌های طراحی صفحه چت" aria-expanded="false"><i class="bi bi-three-dots"></i></button>
+                                <div class="ls-recent-menu" role="menu">
+                                    <button type="button" data-action="rename"><i class="bi bi-pencil"></i> تغییر نام</button>
+                                    <button type="button" data-action="delete"><i class="bi bi-trash3"></i> حذف</button>
+                                </div>
+                            </div>
+                            <div class="ls-recent-row" role="listitem" data-chat-title="پروژه AloGPT">
+                                <button class="ls-recent-item" type="button"><span class="ls-recent-title">پروژه AloGPT</span><time>12:18</time></button>
+                                <button class="ls-recent-menu-toggle" type="button" aria-label="گزینه‌های پروژه AloGPT" aria-expanded="false"><i class="bi bi-three-dots"></i></button>
+                                <div class="ls-recent-menu" role="menu">
+                                    <button type="button" data-action="rename"><i class="bi bi-pencil"></i> تغییر نام</button>
+                                    <button type="button" data-action="delete"><i class="bi bi-trash3"></i> حذف</button>
+                                </div>
+                            </div>
+                            <div class="ls-recent-row" role="listitem" data-chat-title="تمرین پایتون">
+                                <button class="ls-recent-item" type="button"><span class="ls-recent-title">تمرین پایتون</span><time>10:31</time></button>
+                                <button class="ls-recent-menu-toggle" type="button" aria-label="گزینه‌های تمرین پایتون" aria-expanded="false"><i class="bi bi-three-dots"></i></button>
+                                <div class="ls-recent-menu" role="menu">
+                                    <button type="button" data-action="rename"><i class="bi bi-pencil"></i> تغییر نام</button>
+                                    <button type="button" data-action="delete"><i class="bi bi-trash3"></i> حذف</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ls-recent-empty" hidden>هنوز گفتگویی ندارید</div>
+                </div>
+            </section>
+        </aside>
+
+        <main class="right-screen">
+            <section class="chat-content" id="chatContent">
+                <div class="rs-suggest"><span class="text-suggest">چه کاری می‌توانم برایتان انجام دهم؟</span></div>
+                <div class="rs-chat-massage" id="messageArea" aria-live="polite"></div>
+                <div class="chat-footer">
+                <form class="composer-form" id="composerForm">
+                    <div class="rs-input-wrapper">
+                        <button class="composer-icon rs-plus" type="button" aria-label="افزودن فایل"><i class="bi bi-plus"></i></button>
+                        <textarea id="messageInput" rows="1" maxlength="4000" placeholder="هر سوالی دارید بپرسید" aria-label="پیام شما"></textarea>
+                        <button class="composer-icon rs-microphone" type="button" aria-label="ضبط صدا"><i class="bi bi-mic"></i></button>
+                        <button class="send-button" type="submit" aria-label="ارسال پیام"><i class="bi bi-arrow-up"></i></button>
+                    </div>
+                    <div class="composer-hint">Enter برای ارسال · Shift + Enter برای خط جدید</div>
+                </form>
+                <div class="rs-extensions">
+                    <button type="button"><i class="bi bi-image"></i><span>ساختن تصویر</span></button>
+                    <button type="button"><i class="bi bi-pencil"></i><span>ادیت و نوشتن</span></button>
+                    <button type="button"><i class="bi bi-globe2"></i><span>جستجوی اطلاعات</span></button>
+                </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/script/jquery-4.0.0.min.js"></script>
+    <script src="/script/bootstrap.bundle.js"></script>
+    <script src="/script/script.js"></script>
+</body>
+</html>

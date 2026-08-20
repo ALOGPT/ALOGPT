@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود | AloGPT</title>
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/login copy.css">
+    <link rel="stylesheet" href="/styles/fontawesome-free-7.3.0-web/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body class="rs-login-page">
+
+    <div class="rs-login-wrap">
+        <div class="rs-login-box">
+            <div class="rs-login-logo">
+                <img src="/styles/images/icon.logo/aef833d6-6733-48c9-a7fd-ca2ba84733cd.jpg" alt="AloGPT">
+            </div>
+            <h2>Alo GPT | الو هوش مصنوعی آماده</h2>
+            <p class="login-sub mt-2">برای ادامه شماره موبایل خود را وارد کنید</p>
+            <p class="login-sub2">تجربه‌ای سریع‌تر با مدل‌های پیشرفته AloGPT؛ گفتگو، تصویر و صدا.</p>
+            <!-- شماره موبایل -->
+            <div class="rs-login-step" id="stepPhone">
+                <label>شماره موبایل</label>
+                <input type="tel" id="phoneInput" placeholder="09*********" maxlength="11">
+                <button class="rs-login-btn" id="sendOtpBtn">دریافت کد تایید</button>
+                <div class="rs-login-error" id="phoneError"></div>
+                <p class="login-sub3">با ورود به الو جی‌پی‌تی، با <a href="/html/Rules.html">قوانین و شرایط استفاده</a> موافقت می‌کنید.</p>
+                <p class="login-sub4"><a href="#">درباره ما</a></p>
+            </div>
+            <!-- کد تایید -->
+            <div class="rs-login-step d-none" id="stepOtp">
+                <label>کد تایید</label>
+                <p class="otp-hint">کد ارسال‌شده به شماره <span id="otpPhoneDisplay"></span> را وارد کنید</p>
+                <input type="text" id="otpInput" placeholder="- - - - - -" maxlength="6">
+                <button class="login-btn" id="verifyOtpBtn">تایید و ورود</button>
+                <div class="login-error" id="otpError"></div>
+                <a href="#" class="login-back" id="backToPhone">تغییر شماره موبایل</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/script/jquery-4.0.0.min.js"></script>
+    <script src="/script/login.js"></script>
+</body>
+</html>

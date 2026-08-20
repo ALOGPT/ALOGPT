@@ -1,0 +1,145 @@
+.rs-login-page {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rs-login-wrap {
+    width: 100%;
+    padding: 20px;
+}
+
+.rs-login-box {
+    max-width: 446px;
+    width: 100%;
+    height: 540px;
+    margin: 0 auto;
+    background-color: rgb(1, 1, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 13px 8px rgba(101, 17, 198, 0.25);
+    border-radius: 20px;
+    padding: 40px 36px;
+    text-align: center;
+}
+
+.rs-login-logo img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.rs-login-box h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.login-sub {
+    font-size: 15px;
+    color: rgb(150, 150, 150);
+    margin-bottom: 6px;
+}
+.login-sub2 {
+    font-size: 13px;
+    color: rgb(89, 89, 89);
+    margin-bottom: 28px;
+}
+.login-sub3 {
+    font-size: 13.2px;
+    color: rgb(123, 123, 123);
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+.login-sub3 a {
+    text-decoration: none;
+    color: #5b3fd9;
+    font-weight: bold;
+}
+.login-sub4 {
+    font-size: 13.1px;
+    color: rgb(123, 123, 123);
+}
+.login-sub4 a {
+    text-decoration: none;
+    color: #5b3fd9;
+    font-weight: bold;
+}
+.rs-login-step label {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    color: rgb(190, 190, 190);
+    margin-bottom: 8px;
+}
+
+.rs-login-step input {
+    width: 100%;
+    background-color: rgb(28, 28, 28);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 13px 16px;
+    color: white;
+    font-size: 15px;
+    text-align: start;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+}
+
+.rs-login-step input:focus {
+    outline: none;
+    border-color: #7c5cff;
+}
+
+.rs-login-btn {
+    width: 100%;
+    background-color: #7c5cff;
+    border: none;
+    color: white;
+    border-radius: 12px;
+    padding: 13px;
+    font-size: 18.5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    
+}
+
+.rs-login-btn:hover {
+    background-color: #5b3fd9;
+     transform: translateY(-2px)
+}
+
+.rs-login-btn:disabled {
+    background-color: rgba(124, 92, 255, 0.4);
+    cursor: not-allowed;
+}
+
+.rs-login-error {
+    color: #f54e4e;
+    font-size: 12.5px;
+    margin-top: 10px;
+    min-height: 16px;
+}
+
+.otp-hint {
+    font-size: 12.5px;
+    color: rgb(150, 150, 150);
+    margin-bottom: 16px;
+}
+
+.login-back {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #7c5cff;
+    text-decoration: none;
+}
+
+.login-back:hover {
+    text-decoration: underline;
+}
+
+.d-none {
+    display: none;
+}
