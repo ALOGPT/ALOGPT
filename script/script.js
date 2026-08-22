@@ -12,11 +12,31 @@ $(function () {
         "Gemini 2.5 Pro": "Gemini 2.5 Pro",
         "DeepSeek V4 Pro": "DeepSeek V4 Pro"
     };
+    const MODEL_LOGOS = {
+        "GPT-5.6 Lite": "../styles/images/ai_logo/gpt-5.6-sol.webp",
+        "Claude 5 Sonnet": "../styles/images/ai_logo/claude-logo-png_seeklogo-554534.png",
+        "Gemini 2.5 Pro": "../styles/images/ai_logo/gemini-pro.png",
+        "DeepSeek V4 Pro": "../styles/images/ai_logo/deepseek.jpeg"
+    };
     let currentModelId = localStorage.getItem("selectedModel") || "GPT-5.6 Lite";
+    let currentModelLogo = localStorage.getItem("selectedModelLogo") || "";
     let conversationMessages = [];
     let conversationSaved = false;
 
-    $(".model-select-btn span").text(MODEL_NAMES[currentModelId] || currentModelId);
+    function updateModelSelector(logoPath) {
+        currentModelLogo = logoPath || currentModelLogo || MODEL_LOGOS[currentModelId] || MODEL_LOGOS["GPT-5.6 Lite"];
+        $(".model-select-btn .model-label").text(MODEL_NAMES[currentModelId] || currentModelId);
+        $(".model-select-btn .icon img").attr("src", currentModelLogo);
+    }
+
+    const $storedModelItem = $(".model-item").filter(function () {
+        return $(this).attr("data-model-id") === currentModelId;
+    });
+    $(".model-item").removeClass("active");
+    if ($storedModelItem.length) {
+        $storedModelItem.addClass("active");
+    }
+    updateModelSelector(currentModelLogo || $storedModelItem.attr("data-model-logo"));
 
     function formatTime(timestamp) {
         return new Intl.DateTimeFormat("fa-IR", {
@@ -200,10 +220,12 @@ $(function () {
     $(".model-item").on("click", function (event) {
         event.preventDefault();
         currentModelId = $(this).data("model-id");
+        currentModelLogo = $(this).attr("data-model-logo") || MODEL_LOGOS[currentModelId] || MODEL_LOGOS["GPT-5.6 Lite"];
         localStorage.setItem("selectedModel", currentModelId);
+        localStorage.setItem("selectedModelLogo", currentModelLogo);
         $(".model-item").removeClass("active");
         $(this).addClass("active");
-        $(".model-select-btn span").text(MODEL_NAMES[currentModelId] || currentModelId);
+        updateModelSelector($(this).attr("data-model-logo"));
     });
 
     function toggleSidebar() {

@@ -13,9 +13,12 @@
         }
     };
 
-    const saveSelectedModel = (modelId) => {
+    const saveSelectedModel = (modelId, modelLogo) => {
         try {
             window.localStorage.setItem("selectedModel", modelId);
+            if (modelLogo) {
+                window.localStorage.setItem("selectedModelLogo", modelLogo);
+            }
         } catch {
             // ادامه کار بدون localStorage نیز ممکن است.
         }
@@ -58,7 +61,8 @@
                 return;
             }
 
-            saveSelectedModel(modelId);
+            const modelLogo = card.querySelector(".model-icon img")?.getAttribute("src");
+            saveSelectedModel(modelId, modelLogo);
             window.location.href = "chatpaige.html";
         });
     });

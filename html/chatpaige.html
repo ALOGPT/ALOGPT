@@ -68,6 +68,42 @@
         </aside>
 
         <main class="right-screen">
+            <header class="chat-header">
+                <div class="rs-model-selector position-relative">
+                    <button class="model-select-btn" type="button" aria-expanded="false" aria-haspopup="true">
+                        <span class="icon"><img src="../styles/images/ai_logo/gpt-5.6-sol.webp" alt="" aria-hidden="true"></span>
+                        <span class="model-label">GPT-5.6 Lite</span>
+                        <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="model-selector-dd" role="menu">
+                        <div class="upggrade">
+                            <span>ارتقای مدل</span>
+                            <i class="bi bi-stars" aria-hidden="true"></i>
+                        </div>
+                        <a href="#" class="model-item active" data-model-id="GPT-5.6 Lite" data-model-logo="../styles/images/ai_logo/gpt-5.6-sol.webp" role="menuitem">
+                            <span class="icon"><img src="../styles/images/ai_logo/gpt-5.6-sol.webp" alt="" aria-hidden="true"></span>
+                            <span class="model-label">GPT-5.6 Lite</span>
+                            <i class="bi bi-check2" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="model-item" data-model-id="Claude 5 Sonnet" data-model-logo="../styles/images/ai_logo/claude-logo-png_seeklogo-554534.png" role="menuitem">
+                            <span class="icon"><img src="../styles/images/ai_logo/claude-logo-png_seeklogo-554534.png" alt="" aria-hidden="true"></span>
+                            <span class="model-label">Claude 5 Sonnet</span>
+                        </a>
+                        <a href="#" class="model-item" data-model-id="Gemini 2.5 Pro" data-model-logo="../styles/images/ai_logo/gemini-pro.png" role="menuitem">
+                            <span class="icon"><img src="../styles/images/ai_logo/gemini-pro.png" alt="" aria-hidden="true"></span>
+                            <span class="model-label">Gemini 2.5 Pro</span>
+                        </a>
+                        <a href="#" class="model-item" data-model-id="DeepSeek V4 Pro" data-model-logo="../styles/images/ai_logo/deepseek.jpeg" role="menuitem">
+                            <span class="icon"><img src="../styles/images/ai_logo/deepseek.jpeg" alt="" aria-hidden="true"></span>
+                            <span class="model-label">DeepSeek V4 Pro</span>
+                        </a>
+                        <a class="rs-more-modle" href="models.html">
+                            <span>انتخاب مدل‌های بیشتر</span>
+                            <i class="bi bi-arrow-left" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
             <section class="chat-content" id="chatContent">
                 <div class="rs-suggest"><span class="text-suggest">چه کاری می‌توانم برایتان انجام دهم؟</span></div>
                 <div class="rs-chat-massage" id="messageArea" aria-live="polite"></div>

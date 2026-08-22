@@ -300,6 +300,9 @@ body {
 .model-selector-dd a:hover {
     background-color: rgb(64, 63, 63);
 }
+.model-selector-dd .model-item:not(.active) .bi-check2 {
+    visibility: hidden;
+}
 .modle-item:hover , rs-model-active {
     background-color: rgba(194, 189, 189, 0.758);
     color: white;
@@ -419,9 +422,9 @@ body {
 .chat-page.sidebar-collapsed .right-screen { flex-basis: 100%; max-width: 100%; }
 .chat-page .mobile-sidebar-toggle.show-desktop { display: grid; right: 15px; left: auto; place-items: center; }
 .chat-page .right-screen { order: 1; display: flex; flex: 1 1 auto; flex-direction: column; min-width: 0; height: 100dvh; padding: 0 !important; margin: 0; }
-.chat-header { flex: 0 0 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 26px; border-bottom: 1px solid var(--chat-border); }
+.chat-header { flex: 0 0 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 26px; border-bottom: 1px solid var(--chat-border); direction: ltr; }
 .header-actions { display: flex; gap: 4px; }
-.rs-model-selector { z-index: 4; }
+.rs-model-selector { z-index: 4; position: relative; margin-left: auto; direction: rtl; }
 .chat-page .model-select-btn { color: #f3f1fa; background: transparent; font-size: 15px; }
 .chat-page .model-select-btn:hover { background: var(--chat-panel-soft); }
 .chat-page .model-selector-dd { top: 46px; right: 0; left: auto; background: #171923; border-color: var(--chat-border); box-shadow: 0 16px 45px rgba(0,0,0,.35); }
